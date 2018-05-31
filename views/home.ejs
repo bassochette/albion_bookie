@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <title>Albion Bookie</title>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <button class="btn">Incoming</button>
+        </div>
+        <div class="col">
+          <button class="btn">past</button>
+        </div>
+      </div>
+
+      <% future.forEach(function(gvg) { %>
+        <div class="row future">
+          <div class="col">
+            <p><%= gvg.defender.name %></p>
+            <button class="button bet">BET</button>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <%= gvg.cluster.name %> <br>
+                <span class="timer" data-time="<%= gvg.startTime %>"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a href="https://albiononline.com/en/killboard/gvg/<%- gvg.matchId %>"  target="_blank" class="btn"> Official Website</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <%= gvg.defenderScore %>
+              </div>
+              <div class="col">
+                VS
+              </div>
+              <div class="col">
+                <%= gvg.attackerScore %>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <p><%= gvg.attacker.name %></p>
+            <button class="button bet">BET</button>
+          </div>
+        </div>
+      <% }) %>
+
+      <% past.forEach(function(gvg) { %>
+        <div class="row past">
+          <div class="col">
+            <p><%= gvg.defender.name %></p>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <%= gvg.cluster.name %> <br>
+                <%= gvg.startTime %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a href="https://albiononline.com/en/killboard/gvg/<%- gvg.matchId %>"  target="_blank" class="btn"> Official Website</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <%= gvg.defenderScore %>
+              </div>
+              <div class="col">
+                VS
+              </div>
+              <div class="col">
+                <%= gvg.attackerScore %>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <p><%= gvg.attacker.name %></p>
+          </div>
+        </div>
+      <% }) %>
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script language="javascript" type="text/javascript" src="/js/vendor/moment.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/timer.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/menu.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/gvg.abi.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/app.js"></script>
+
+  </body>
+</html>
